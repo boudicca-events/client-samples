@@ -10,10 +10,10 @@ repositories {
 }
 
 dependencies {
-    implementation("events.boudicca:publisher-client:0.2.0")
-    implementation("events.boudicca:ingest-client:0.2.0")
-    implementation("events.boudicca:search-client:0.2.0")
-    implementation("events.boudicca:enricher-client:0.2.0")
+    implementation("events.boudicca:publisher-client:0.5.0")
+    implementation("events.boudicca:ingest-client:0.5.0")
+    implementation("events.boudicca:search-client:0.5.0")
+    implementation("events.boudicca:enricher-client:0.5.0")
 }
 
 kotlin {

@@ -12,11 +12,26 @@ fun main() {
     getFilters(searchClient)
 }
 
+fun sendQuery(searchClient: SearchClient) {
+    val queryDTO = QueryDTO(
+        """ "location.name" equals "posthof" """,
+        0,
+        20
+    )
+
+    val result = searchClient.queryEvents(queryDTO)
+
+    println("query found ${result.totalResults} results in total, printing the first 20")
+    for (event in result.result) {
+        println(event)
+    }
+}
+
 fun getFilters(searchClient: SearchClient) {
     val filterQueryDTO = FilterQueryDTO(
         listOf(
-            FilterQueryEntryDTO("location.name", false),
-            FilterQueryEntryDTO("location.city", true)
+            FilterQueryEntryDTO("location.name"),
+            FilterQueryEntryDTO("location.city")
         )
     )
 
@@ -32,20 +47,5 @@ fun getFilters(searchClient: SearchClient) {
     println("all different cities of boudicca:")
     for (locationCity in result["location.city"]!!) {
         println(locationCity)
-    }
-}
-
-fun sendQuery(searchClient: SearchClient) {
-    val queryDTO = QueryDTO(
-        """ "location.name" equals "posthof" """,
-        0,
-        20
-    )
-
-    val result = searchClient.queryEvents(queryDTO)
-
-    println("query found ${result.totalResults} results in total, printing the first 20")
-    for (event in result.result) {
-        println(event)
     }
 }
