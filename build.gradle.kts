@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.9.21"
+    kotlin("jvm") version "2.3.21"
 }
 
 group = "events.boudicca.samples"
@@ -10,10 +10,10 @@ repositories {
 }
 
 dependencies {
-    implementation("events.boudicca:publisher-client:0.5.0")
-    implementation("events.boudicca:ingest-client:0.5.0")
-    implementation("events.boudicca:search-client:0.5.0")
-    implementation("events.boudicca:enricher-client:0.5.0")
+    implementation("events.boudicca:publisher-client:0.7.0")
+    implementation("events.boudicca:ingest-client:0.7.0")
+    implementation("events.boudicca:search-client:0.7.0")
+    implementation("events.boudicca:enricher-client:0.7.0")
 }
 
 kotlin {

@@ -1,11 +1,11 @@
 package org.example
 
-import base.boudicca.api.enricher.EnricherClient
+import base.boudicca.api.enricher.DefaultEnricherClient
 import base.boudicca.model.Event
 import java.time.OffsetDateTime
 
 fun main() {
-    val enricherClient = EnricherClient("https://enricher.boudicca.events")
+    val enricherClient = DefaultEnricherClient("https://enricher.boudicca.events")
 
     val toEnrich = listOf(
         Event(

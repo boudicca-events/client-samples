@@ -1,12 +1,13 @@
 package org.example
 
+import base.boudicca.api.search.DefaultSearchClient
 import base.boudicca.api.search.FilterQueryDTO
 import base.boudicca.api.search.FilterQueryEntryDTO
 import base.boudicca.api.search.QueryDTO
 import base.boudicca.api.search.SearchClient
 
 fun main() {
-    val searchClient = SearchClient("https://search.boudicca.events")
+    val searchClient = DefaultSearchClient("https://search.boudicca.events")
 
     sendQuery(searchClient)
     getFilters(searchClient)
